@@ -1,0 +1,126 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>craigslist</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+<div id="wrap">
+  <nav class="navbar navbar-default">
+         <div class="container-fluid">
+           <!-- Brand and toggle get grouped for better mobile display -->
+           <div class="navbar-header">
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"></button>
+
+           </div>
+
+           <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav">
+              <li><a href="">Search Listings</a></li>
+
+               <li><a href="">Create Listing</a></li>
+               <li><a href="">My Listings</a></li>
+               <li><a href="">Update My Location</a></li>
+
+               <ul class="nav navbar-nav navbar-right">
+                 <li><a href=""><em>Signed in as </em></a></li>
+                 <form class="navbar-form navbar-right" method="POST", action="">{% csrf_token %}
+                   <button type="submit" class="btn btn-default">Logout</button>
+                 </form>
+               </ul>
+
+               <ul class="nav navbar-nav navbar-right">
+                 <form class="navbar-form navbar-right" method="POST", action="{}">{% csrf_token %}
+                   <div class="form-group">
+                     <input type="text" class="form-control" name='username' placeholder="Username">
+                   </div>
+                   <div class="form-group">
+                     <input type="password" class="form-control" name='password' placeholder="Password">
+                   </div>
+                   <button type="submit" class="btn btn-default">Login</button>
+                 </form>
+                 <li><a href="">Register</a></li>
+
+               </ul>
+
+             </ul>
+
+           </div><!-- /.navbar-collapse -->
+         </div><!-- /.container-fluid -->
+       </nav>
+
+
+    <div class="container">
+        <center>
+        <div class="page-header">
+            <h1>craigslist <small>an online place to buy & sell</small></h1>
+        </center>
+        </div>
+
+        <center>
+    <div class="panel panel-default" style="width:80%">
+        <div class="panel-body">
+            Basic panel
+        </div>
+        </center>
+    </div>
+
+    <center>
+<div class="panel panel-default" style="width:20%">
+    <div class="panel-heading">Community</div>
+        <div class="panel-body">
+            Panel content
+        </div>
+    </center>
+</div>
+
+
+<div class="panel panel-default" style="width:10%">
+    <div class="panel-heading">jobs</div>
+    <div class="panel-body">
+    Panel content
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    Panel content
+  </div>
+  <div class="panel-footer">Panel footer</div>
+  </center>
+</div>
+
+
+           {% block content %}
+
+           <h1>Hello World</h1>
+
+
+           {% endblock %}
+
+
+
+    </div>
+  </div>
+
+    <footer class='footer'>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class='text-left'>For demonstration purposes only.</p>
+          </div>
+          <div class="col-sm-6">
+            <p class='text-right'>Iron Yard Project</p>
+            <div class="col-sm-6">
+              <p class='text-center'>© craigslist help safety privacy feedback cl jobs terms about mobile</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'cloneapp/js/bootstrap.js' %}"></script>
+  </body>
