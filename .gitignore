@@ -2,3 +2,5 @@
 .envrc
 .direnv
 __pycache__
+secrets.py
+db.sqlite3
