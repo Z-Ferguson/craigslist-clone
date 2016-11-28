@@ -17,8 +17,8 @@ class Category(models.Model):
         return self.name
 
 
-class subCategory(models.Model):
-    sub_name = models.CharField(max_length=50, default=None)
+# class subCategory(models.Model):
+#     sub_name = models.CharField(max_length=50, default=None)
 
     def __str__(self):
         return self.sub_name
@@ -33,7 +33,7 @@ class Listing(models.Model):
     body = models.TextField()
     # photo = models.ImageField(upload_to="None", null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    sub_category = models.ForeignKey(subCategory, on_delete=models.CASCADE)
+    # sub_category = models.ForeignKey(subCategory, on_delete=models.CASCADE)
 
 
 class Profile(models.Model):
