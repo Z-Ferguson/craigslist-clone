@@ -76,7 +76,7 @@ class CategoryListListView(ListView):
 
 class ListingCreateView(CreateView):
     model = Listing
-    fields = ["title", 'price', 'location', 'body', 'photo', 'category']
+    fields = ["title", 'price', 'location', 'body', 'category']
     success_url = reverse_lazy("index_view")
 
     def get_form(self, form_class=None):
